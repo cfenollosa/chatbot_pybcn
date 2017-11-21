@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <input type='text' id='msg_input'>
+        <input onclick='send()' type='button' value='Send'>
+
+        <script type="text/javascript">
+            var ws = new WebSocket('ws://127.0.0.1:1234/');
+
+            ws.onmessage = function (event) {
+                var msg = event.data;
+                console.log('Recv: ' + msg);
+            };
+
+            function send() {
+                var msg = document.getElementById('msg_input').value;
+                console.log('Sent: ' + msg);
+                ws.send(msg);
+            }
+        </script>
+    </body>
+</html>
