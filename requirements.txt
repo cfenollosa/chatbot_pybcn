@@ -1,1 +1,4 @@
+nltk==3.2.5
+PyMarkovChain==1.8
+six==1.11.0
 websockets==3.2
